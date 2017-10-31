@@ -13,37 +13,43 @@ import ch.ethz.inf.vs.sajaeger.vsrubfischchat.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText editText;
+    TextView status;
+    String host = "10.0.2.2";
+    String port = "4446";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        editText = (EditText) findViewById(R.id.editText);
+        editText  = (EditText) findViewById(R.id.editText);
+        status = (TextView) findViewById(R.id.status);
 
         final Button join = (Button) findViewById(R.id.join_button);
-        final Intent joinIntent = new Intent();//this, null);
         join.setOnClickListener(this);
 
         final Button settings = (Button) findViewById(R.id.settings_button);
-        final Intent settingsIntent = new Intent();//this, null);
         settings.setOnClickListener(this);
 
         }
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.join_button) {
-            Log.d("##Main", "Join clicked");
-            TextView status = (TextView) findViewById(R.id.status);
             status.setText(R.string.processing);
-            Log.d("##Main", "Status text set to processing");
             String username = editText.getText().toString();
-            String msg = ""; //TODO
-            String ip = "127.0.1.1";
-            String port = "4446";
-            new RegisterManager().execute(username, ip, port);
-            status.setText(msg);
+            new RegisterManager(new AsyncResponse() {
+                @Override
+                public void processFinish(String output) {
+                    status.setText(output);
+                }
+            }).execute(username, host, port);
+
+            final Intent joinIntent = new Intent();
             //startActivity(joinIntent);
+
+        } else if (view.getId() == R.id.settings_button) {
+            final Intent settingsIntent = new Intent();
+            //startActivity(settingsIndent);
         }
     }
 }
