@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">VS rubfisch chat</string>
+    <string name="join">Join</string>
+    <string name="settings">Settings</string>
+    <string name="username">Username:</string>
+    <string name="status">Status:</string>
+    <string name="processing">Processing request..</string>
+</resources>
