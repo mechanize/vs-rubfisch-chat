@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ch.ethz.inf.vs.a3.solution.MainActivity">
+    tools:context="ch.ethz.inf.vs.a3.solution.SettingsActivity">
 
     <LinearLayout
-        android:id="@+id/linear_top"
+        android:id="@+id/settings_top"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal"
@@ -16,56 +17,29 @@
         tools:layout_editor_absoluteY="8dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textServerAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="@string/username"
+            android:text="@string/textServerAddress"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"/>
 
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/editServerAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:inputType="text"
+            android:inputType="numberDecimal"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linear_bot"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
-
-        <Button
-            android:id="@+id/join_button"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/join" />
-
-        <Button
-            android:id="@+id/settings_button"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/settings" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear_status"
+        android:id="@+id/settings_bot"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal"
@@ -73,24 +47,34 @@
         tools:layout_editor_absoluteY="8dp">
 
         <TextView
+            android:id="@+id/textPort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="@string/status"
+            android:text="@string/textPort"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"/>
 
 
-        <TextView
-            android:id="@+id/status"
+        <EditText
+            android:id="@+id/editPort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:inputType="numberDecimal"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"/>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/save" />
 
 
 </LinearLayout>

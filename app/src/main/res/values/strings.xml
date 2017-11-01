@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">VS rubfisch chat</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="RCL">Retrieve chat log</string>
     <string name="join">Join</string>
     <string name="settings">Settings</string>
     <string name="username">Username:</string>
     <string name="status">Status:</string>
     <string name="processing">Processing request..</string>
+    <string name="textServerAddress">Server address:</string>
+    <string name="textPort">Port:</string>
+    <string name="save">Save</string>
+    <string name="settings_saved">Settings changed successfully.</string>
+    <string name="settings_canceled">Settings canceled.</string>
 </resources>

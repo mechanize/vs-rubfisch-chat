@@ -1,4 +1,4 @@
-package ch.ethz.inf.vs.sajaeger.vsrubfischchat;
+package ch.ethz.inf.vs.a3;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
